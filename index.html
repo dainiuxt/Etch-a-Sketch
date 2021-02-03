@@ -11,32 +11,41 @@
     <title>Etch-a-sketch</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Etch-a-sketch</h1>
+    <div class="container main">
+      <h1 class="row justify-content-md-center p-5">🅴🆃🅲🅷 🅰 🆂🅺🅴🆃🅲🅷</h1>
       <div class="controls">
-        <div class="row">
-          <div class="slider">
-            <input id="slider" type="range" min="2" max="30" step="1" value="7">
+        <div class="row justify-content-md-center p-3 row-eq-height">
+          <div id="mouse" class="control col text-center">
+            <div  class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="mouseover" name="mouse" value="mouseover">
+              <label class="form-check-label" for="inlineRadio1">MouseOver</label>  
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="click" name="mouse" value="click" checked>
+              <label class="form-check-label" for="inlineRadio1">Click</label>
+            </div>
+          </div>          
+          <div class="slider control col text-center">
+            <div id="sliderValue" class="control col"></div>            
+            <input class="col" id="slider" type="range" min="2" max="30" step="1" value="7">
           </div>
-          <div id="sliderValue"></div>
-          <div class="color">
-           <label for="colorpicker">Color:</label>
-           <input type="color" id="pen" value="#0000ff">
+          
+          <div class="color control col text-center">
+           <label class="col" for="colorpicker ">Color:</label>
+           <input class="col" type="color" id="pen" value="#0000ff">
           </div>
-          <div id="mouse">
-            <input type="radio" id="mouseover" name="mouse" value="mouseover"> MouseOver
-            <input type="radio" id="click" name="mouse" value="click" checked> Click
+          <div id="reset" class="control col">
+            <button type="button" class="btn btn-outline-warning col">Clear grid</button>
           </div>
-          <div class="reset"></div>
         </div>
       </div>
       <div id="grid">
         <!-- DOM generated grid comes here -->
       </div>
+      <div class="row justify-content-md-center p-5">
+        <p>This is The Odin Project task <a href="https://www.theodinproject.com/lessons/etch-a-sketch-project"> Etch-a-sketch</a>. Demo site on <a href="https://etch-a-sketch.dainiuxt.repl.co/"> REPL.IT</a>, <a href="https://github.com/dainiuxt/Etch-a-Sketch"> source code at GitHub</a>. (C) 2021.</p>
+      </div>
     </div>
-    <script>
-
-    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

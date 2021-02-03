@@ -1,8 +1,9 @@
 const grid = document.getElementById("grid");
 let gridSize = document.getElementById("slider").value;
 const slider = document.getElementById("slider");
+const resetGrid = document.getElementById("reset");
 let sliderValue = document.getElementById("sliderValue");
-sliderValue.textContent = 'Grid size is ' + `${gridSize}` + 'x' + `${gridSize}`;
+sliderValue.textContent = 'Grid: ' + `${gridSize}` + 'x' + `${gridSize}`;
 let penColor = document.getElementById("pen").value;
 let mouseMethod = document.getElementById("mouse");
 let drawingStyle = document.querySelector('input[name="mouse"]:checked').value;
@@ -17,10 +18,7 @@ function makeRows(size) {
     cell.style.setProperty('--cell-width', 560/size + 'px');
     cell.style.setProperty('--cell-height', 560/size + 'px');
   };
-  mouseMethod.addEventListener('change', function(e) {
-    drawingStyle = document.querySelector('input[name="mouse"]:checked').value;
-  });
-  let items = document.querySelectorAll('.grid-item');
+    let items = document.querySelectorAll('.grid-item');
   items.forEach(function(item) {
     item.addEventListener(drawingStyle, function() {
       event.target.style.backgroundColor = penColor;
@@ -46,7 +44,15 @@ function gridUpdate() {
   makeRows(gridSize);
 }
 
+mouseMethod.addEventListener('change', function(e) {
+  return drawingStyle = document.querySelector('input[name="mouse"]:checked').value;
+});
+
 slider.addEventListener('click', gridUpdate);
 document.getElementById("pen").addEventListener('change', (e) => {
     penColor = e.target.value;
 });
+if (resetGrid.addEventListener)
+    resetGrid.addEventListener("click", gridUpdate, false);
+else if (resetGrid.attachEvent)
+    resetGrid.attachEvent('onclick', gridUpdate);

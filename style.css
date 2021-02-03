@@ -3,9 +3,19 @@
   --grid-rows: 1;
 }
 
+body {
+	min-height: 100vh;
+}
+
+.main {
+	width: 80vw;
+	margin: auto;
+}
+
 #grid {
-	border: 1px solid black;
+	border: 1px solid grey;
   display: grid;
+  margin: auto;
   width: 560px;
   height: 560px;
   grid-gap: 0em;
@@ -16,7 +26,15 @@
 .grid-item {
   width: var(--cell-width);
   height: var(--cell-height);
-  /*padding: 1em;*/
   border: 1px solid #ddd;
   text-align: center;
+}
+
+.controls, h1 {
+  margin: auto;
+}
+
+.row {
+	display: flex;
+	align-items: center;
 }
